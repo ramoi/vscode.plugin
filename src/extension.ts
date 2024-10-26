@@ -46,9 +46,6 @@ const toSnake = () => {
 };
 
 export function activate(context: vscode.ExtensionContext) {
-  let disposable = vscode.commands.registerCommand("ramoi.tocamel", toCamel);
-  context.subscriptions.push(disposable);
-
-  let disposable4 = vscode.commands.registerCommand("ramoi.tosnake", toSnake);
-  context.subscriptions.push(disposable4);
+  context.subscriptions.push(vscode.commands.registerCommand("ramoi.tocamel", toCamel));
+  context.subscriptions.push(vscode.commands.registerCommand("ramoi.tosnake", toSnake));
 }
